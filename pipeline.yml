@@ -79,6 +79,22 @@ Resources:
         ComputeType: BUILD_GENERAL1_SMALL
         Image: aws/codebuild/standard:4.0
 
+  CodePipeline:
+    Type: AWS::Codepipeline::Pipeline
+    properties:
+      Name: !Ref 'AWS::StackName'
+      RoleArn: !GetAtt CodePipelineServiceRole.Arn
+      ArtifactStore:
+        Type: s3
+        Location: !Ref CodePipelineArtifactStore
+  
+  CodePipelineArtifactStore:
+    Type: AWS::S3::Bucket
+    Properties:
+      VersioningConfiguration:
+        Status: Disabled    
+
+
    
   
   
