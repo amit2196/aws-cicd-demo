@@ -73,13 +73,13 @@ Resources:
             - - Type: EVENT
                 Pattern: PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED
               - Type: BASE_REF
-                Pattern: !Sub ^refs/heads/master$
+                Pattern: !Sub ^refs/heads/main$
       Environment:
         Type: LINUX_CONTAINER
         ComputeType: BUILD_GENERAL1_SMALL
         Image: aws/codebuild/standard:4.0
 
-  
+   
   
   
   
